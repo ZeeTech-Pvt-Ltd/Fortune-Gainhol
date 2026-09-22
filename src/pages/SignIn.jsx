@@ -22,7 +22,7 @@ export default function SignIn() {
     <section className="auth-wrap">
       <div className="container">
         <div className="form-card auth-card" data-reveal>
-          <h1 style={{ fontSize: 24, marginBottom: 8 }}>Welcome back</h1>
+          <h1 style={{ fontSize: 24, marginBottom: 8 }}>Welcome Back</h1>
           <p>Sign in to your Fortune Gainhol account.</p>
 
           <form onSubmit={handleSubmit}>

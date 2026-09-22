@@ -17,7 +17,7 @@ export default function NotFound() {
           <div className="nf-code" data-reveal>
             404
           </div>
-          <h1 data-reveal>Page not found</h1>
+          <h1 data-reveal>Page Not Found</h1>
           <p data-reveal>
             The page you are looking for does not exist or has moved. Check the address, or head
             back to safety.

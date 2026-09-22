@@ -17,7 +17,7 @@ export default function ThankYou() {
         <div className="centered-page__icon" data-reveal>
           <Icon name="check" size={38} strokeWidth={2.6} />
         </div>
-        <h1 data-reveal>Thank you!</h1>
+        <h1 data-reveal>Thank You!</h1>
         <p data-reveal>
           Your registration has been received. Our team will contact you shortly to activate your
           Fortune Gainhol account and guide you through your first trade.

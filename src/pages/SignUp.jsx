@@ -28,7 +28,7 @@ export default function SignUp() {
               Join Fortune Gainhol
             </span>
             <h1 data-reveal style={{ fontSize: 'clamp(30px, 3.6vw, 44px)', margin: '14px 0 20px' }}>
-              Create your free account today
+              Create Your Free Account Today
             </h1>
             <p data-reveal style={{ fontSize: 17, color: 'var(--muted)', marginBottom: 26 }}>
               Opening an account takes less than two minutes. Our team will contact you to activate

@@ -141,7 +141,7 @@ export function GrowthArt({ className }) {
 
       {/* labels */}
       <g fontFamily="Fraunces, Georgia, serif">
-        <text x="40" y="96" fontSize="24" fontWeight="700" fill="#faf5e9">Grow your fortune</text>
+        <text x="40" y="96" fontSize="24" fontWeight="700" fill="#faf5e9">Grow Your Fortune</text>
         <text x="40" y="124" fontSize="15" fill="#c9d8cf" fontFamily="Inter, Arial, sans-serif">AI signals · copy trading · 300+ markets</text>
         <rect x="40" y="146" width="130" height="44" rx="22" fill="#c8a24b" />
         <text x="105" y="174" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0d2c22" fontFamily="Inter, Arial, sans-serif">Get started</text>

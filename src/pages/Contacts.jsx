@@ -8,18 +8,18 @@ import { SITE_URL, SUPPORT_EMAIL, HERO } from '../data/content'
 const CONTACT_CARDS = [
   {
     icon: 'mail',
-    title: 'Email us',
+    title: 'Email Us',
     text: `Write to ${SUPPORT_EMAIL} - we reply within one business day.`,
     href: `mailto:${SUPPORT_EMAIL}`,
   },
   {
     icon: 'clock',
-    title: 'Support hours',
+    title: 'Support Hours',
     text: 'Our professional support team is available 24 hours a day, 7 days a week.',
   },
   {
     icon: 'headset',
-    title: 'Dedicated account manager',
+    title: 'Dedicated Account Manager',
     text: 'Every Fortune Gainhol client gets a personal manager to guide their first trades.',
   },
   {
@@ -90,7 +90,7 @@ export default function Contacts() {
               <span className="kicker" data-reveal>
                 Get started
               </span>
-              <h2 data-reveal>Register and a manager will reach out to you</h2>
+              <h2 data-reveal>Register And A Manager Will Reach Out To You</h2>
               <p data-reveal>
                 Fill in the form and one of our account managers will contact you shortly to
                 activate your account and answer any questions you have - no obligation, no
