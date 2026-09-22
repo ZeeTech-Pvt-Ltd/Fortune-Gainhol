@@ -26,11 +26,11 @@ export const HERO = {
   badge: 'Now live across Australia',
   title: ['Grow your', 'fortune', 'with Gainhol intelligence'],
   // `title` is [before, highlighted, after] - the highlighted word gets gold.
-  lead: 'Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets — built to help you grow your fortune with bank-grade security, human support and insight you can act on.',
+  lead: 'Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets - built to help you grow your fortune with bank-grade security, human support and insight you can act on.',
   trust: ['256-bit SSL encryption', '98% cold storage', '24/7 support'],
   formTitle: 'Create your free account',
   formSubtitle:
-    'Join thousands of Australian investors on Fortune Gainhol — registration takes under two minutes.',
+    'Join thousands of Australian investors on Fortune Gainhol - registration takes under two minutes.',
 }
 
 export const ABOUT_PAGE = {
@@ -38,7 +38,7 @@ export const ABOUT_PAGE = {
     kicker: 'Our story',
     title: 'Built for the long game, engineered for everyone',
     paragraphs: [
-      'Fortune Gainhol began with a simple frustration: serious wealth-building tools were locked behind complicated platforms, hidden fees and jargon. We believed everyday investors deserved better — so we built it.',
+      'Fortune Gainhol began with a simple frustration: serious wealth-building tools were locked behind complicated platforms, hidden fees and jargon. We believed everyday investors deserved better - so we built it.',
       'Today, Fortune Gainhol combines an advanced AI-driven trading engine with institutional-grade security and an interface anyone can master in minutes. From your first Bitcoin to a diversified multi-asset portfolio, everything you need to grow your fortune lives in one place.',
     ],
     facts: ['Founded 2018', 'Sydney HQ', '300+ instruments', '24/7 human support'],
@@ -50,7 +50,7 @@ export const ABOUT_PAGE = {
       {
         icon: 'shield',
         title: 'Security by default',
-        text: '256-bit encryption, 98% cold storage and two-factor authentication on every account — before anything else.',
+        text: '256-bit encryption, 98% cold storage and two-factor authentication on every account - before anything else.',
       },
       {
         icon: 'scale',
@@ -65,7 +65,7 @@ export const ABOUT_PAGE = {
       {
         icon: 'headset',
         title: 'Human support',
-        text: 'A real person answers 24/7 — not a bot loop. Every client gets a dedicated account manager from day one.',
+        text: 'A real person answers 24/7 - not a bot loop. Every client gets a dedicated account manager from day one.',
       },
     ],
   },
@@ -75,11 +75,11 @@ export const ABOUT_PAGE = {
     items: [
       {
         title: 'AI that works while you sleep',
-        text: 'Our engine scans global markets around the clock and delivers signals with a 92% accuracy rate — so opportunities never pass you by.',
+        text: 'Our engine scans global markets around the clock and delivers signals with a 92% accuracy rate - so opportunities never pass you by.',
       },
       {
         title: 'Bank-grade custody, not promises',
-        text: 'Client funds are held in segregated accounts, and 98% of digital assets sit in offline cold wallets — unreachable by anyone but you.',
+        text: 'Client funds are held in segregated accounts, and 98% of digital assets sit in offline cold wallets - unreachable by anyone but you.',
       },
       {
         title: 'Built for the way Australians invest',
@@ -92,7 +92,7 @@ export const ABOUT_PAGE = {
 export const PRODUCT_PAGE = {
   hero: {
     title: "Grow your portfolio with Fortune Gainhol's analytics platform",
-    lead: 'Track live market movements, follow AI-driven signals and grow your fortune with tools designed for investors at every level — from first-timers to pros.',
+    lead: 'Track live market movements, follow AI-driven signals and grow your fortune with tools designed for investors at every level - from first-timers to pros.',
   },
   intro: {
     kicker: 'Built for you',
@@ -107,7 +107,7 @@ export const PRODUCT_PAGE = {
     {
       icon: 'pie',
       title: 'Every Asset, One Portfolio',
-      text: 'See crypto, equities, forex and commodities together in one place — no more juggling multiple apps.',
+      text: 'See crypto, equities, forex and commodities together in one place - no more juggling multiple apps.',
     },
     {
       icon: 'bolt',
@@ -117,7 +117,7 @@ export const PRODUCT_PAGE = {
     {
       icon: 'device',
       title: 'Trade From Anywhere',
-      text: 'Your portfolio goes where you go — desktop, tablet or mobile, synced instantly.',
+      text: 'Your portfolio goes where you go - desktop, tablet or mobile, synced instantly.',
     },
     {
       icon: 'book',
@@ -135,7 +135,7 @@ export const PRODUCT_PAGE = {
     title: 'The Fortune Gainhol Trading Experience',
     text: 'Everything you need to trade with confidence, engineered into one platform.',
     points: [
-      'Live portfolio tracking — watch every position and allocation update in real time',
+      'Live portfolio tracking - watch every position and allocation update in real time',
       'Pro-grade charts with 80+ indicators to help time your entries',
       'Instant orders on Bitcoin, Ethereum and 300+ other markets',
       'Secure custody with 98% cold storage and two-factor protection',
@@ -153,19 +153,19 @@ export const STATS = [
 export const ABOUT = {
   kicker: 'Meet Fortune Gainhol',
   title: 'One secure platform for growing your fortune',
-  text: 'Fortune Gainhol brings together an advanced AI-driven trading engine, institutional-grade security and an interface anyone can master — so whether you are buying your first Bitcoin or diversifying across 300+ instruments, everything you need to build wealth is in one place.',
+  text: 'Fortune Gainhol brings together an advanced AI-driven trading engine, institutional-grade security and an interface anyone can master - so whether you are buying your first Bitcoin or diversifying across 300+ instruments, everything you need to build wealth is in one place.',
   points: [
     'AI-assisted market signals with 92% accuracy',
     'Beginner-friendly, with no prior trading experience required',
     'Bank-grade security with 256-bit encryption',
-    'Full control — deposit, trade and withdraw at any time',
+    'Full control - deposit, trade and withdraw at any time',
   ],
 }
 
 export const ASSETS = {
   kicker: 'Global markets, one account',
   title: "Trade the world's biggest markets from one simple account",
-  text: 'Trade the coins investors trust most, alongside equities, forex, commodities and precious metals — all from a single Fortune Gainhol account.',
+  text: 'Trade the coins investors trust most, alongside equities, forex, commodities and precious metals - all from a single Fortune Gainhol account.',
   list: [
     { icon: '/images/coins/btc.svg', name: 'Bitcoin', tag: 'BTC · the original digital asset' },
     { icon: '/images/coins/eth.svg', name: 'Ethereum', tag: 'ETH · smart contracts & DeFi' },
@@ -184,7 +184,7 @@ export const STEPS = {
     {
       icon: 'user',
       title: 'Create your free account',
-      text: 'Sign up in under two minutes with your name, email and phone number. No trading experience needed — your dedicated account manager guides you from day one.',
+      text: 'Sign up in under two minutes with your name, email and phone number. No trading experience needed - your dedicated account manager guides you from day one.',
     },
     {
       icon: 'wallet',
@@ -194,7 +194,7 @@ export const STEPS = {
     {
       icon: 'sparkle',
       title: 'Start trading with AI support',
-      text: 'Follow AI-generated market signals, mirror seasoned investors or build your own portfolio — on desktop or mobile, whenever you like.',
+      text: 'Follow AI-generated market signals, mirror seasoned investors or build your own portfolio - on desktop or mobile, whenever you like.',
     },
   ],
 }
@@ -204,7 +204,7 @@ export const JOIN = {
   title: 'Open Your Account and Start Growing Your Fortune',
   text: 'Opening an account takes less than two minutes. Explore the market with AI-powered insight and see for yourself why investors across Australia are choosing Fortune Gainhol.',
   points: [
-    'Free registration — no hidden fees to open an account',
+    'Free registration - no hidden fees to open an account',
     'AI-driven signals with a 92% accuracy rate',
     'Withdraw your funds whenever you want',
   ],
@@ -217,7 +217,7 @@ export const CALCULATOR = {
   balanceLabel: 'Potential future balance',
   monthlyLabel: 'Estimated monthly earnings',
   disclaimer:
-    'Illustrative projection based on an 8.2% monthly rate over 12 months. Trading involves significant risk — projections are not a guarantee of profit.',
+    'Illustrative projection based on an 8.2% monthly rate over 12 months. Trading involves significant risk - projections are not a guarantee of profit.',
 }
 
 export const BENEFITS = {
@@ -233,7 +233,7 @@ export const BENEFITS = {
     {
       icon: 'copy',
       title: 'Copy Trading',
-      text: 'Mirror the moves of experienced, profitable investors — automatically, with a single click.',
+      text: 'Mirror the moves of experienced, profitable investors - automatically, with a single click.',
     },
     {
       icon: 'pie',
@@ -248,12 +248,12 @@ export const BENEFITS = {
     {
       icon: 'device',
       title: 'Mobile App & Multi-Device',
-      text: 'Trade seamlessly across desktop, tablet and mobile — your account stays in sync everywhere.',
+      text: 'Trade seamlessly across desktop, tablet and mobile - your account stays in sync everywhere.',
     },
     {
       icon: 'headset',
       title: '24/7 Human Support',
-      text: 'Real people, real answers — our support team is available around the clock, every day of the year.',
+      text: 'Real people, real answers - our support team is available around the clock, every day of the year.',
     },
   ],
 }
@@ -284,7 +284,7 @@ export const TESTIMONIALS = {
     {
       name: 'James T.',
       place: 'Canberra, Australia',
-      text: "I'd never traded crypto before signing up. The AI signals did the heavy lifting and my account manager walked me through my first deposit. Six months in, my portfolio is actually growing — I still can't quite believe how easy Fortune Gainhol made it.",
+      text: "I'd never traded crypto before signing up. The AI signals did the heavy lifting and my account manager walked me through my first deposit. Six months in, my portfolio is actually growing - I still can't quite believe how easy Fortune Gainhol made it.",
       stars: 5,
     },
     {
@@ -296,7 +296,7 @@ export const TESTIMONIALS = {
     {
       name: 'Robert C.',
       place: 'Hobart, Australia',
-      text: 'Security was my number one concern — 98% cold storage and 2FA on every withdrawal was what convinced me to sign up. Eight months of trading on Fortune Gainhol and not a single moment of worry.',
+      text: 'Security was my number one concern - 98% cold storage and 2FA on every withdrawal was what convinced me to sign up. Eight months of trading on Fortune Gainhol and not a single moment of worry.',
       stars: 5,
     },
     {
@@ -323,7 +323,7 @@ export const TESTIMONIALS = {
 export const SECURITY = {
   kicker: 'Security first',
   title: 'Bank-Grade Protection for Your Fortune',
-  text: 'We built Fortune Gainhol on one principle: your assets and your data deserve bank-grade protection — at every step, every day.',
+  text: 'We built Fortune Gainhol on one principle: your assets and your data deserve bank-grade protection - at every step, every day.',
   bigStat: '98%',
   bigStatLabel: 'of assets held in offline cold wallets with no internet connection',
   items: [
@@ -373,7 +373,7 @@ export const CAPABILITIES = {
     {
       icon: 'device',
       title: 'Multi-device sync',
-      text: 'Start on desktop, finish on mobile — perfectly in sync.',
+      text: 'Start on desktop, finish on mobile - perfectly in sync.',
     },
     {
       icon: 'pie',
@@ -397,7 +397,7 @@ export const FINAL_CTA = {
 export const FAQS = [
   {
     q: 'What is Fortune Gainhol?',
-    a: 'Fortune Gainhol is an AI-powered trading platform where you can trade Bitcoin, Ethereum and 300+ other assets — including equities, forex, commodities and CFDs — from one secure account. It is designed for beginners and experienced investors alike.',
+    a: 'Fortune Gainhol is an AI-powered trading platform where you can trade Bitcoin, Ethereum and 300+ other assets - including equities, forex, commodities and CFDs - from one secure account. It is designed for beginners and experienced investors alike.',
   },
   {
     q: 'How do I get started with Fortune Gainhol?',
@@ -405,15 +405,15 @@ export const FAQS = [
   },
   {
     q: 'Is Fortune Gainhol safe?',
-    a: 'Yes. Fortune Gainhol protects your assets with 256-bit SSL encryption, two-factor authentication and cold storage — 98% of assets are held in offline wallets with no internet connection. We are also fully KYC/AML compliant.',
+    a: 'Yes. Fortune Gainhol protects your assets with 256-bit SSL encryption, two-factor authentication and cold storage - 98% of assets are held in offline wallets with no internet connection. We are also fully KYC/AML compliant.',
   },
   {
     q: 'What assets can I trade on Fortune Gainhol?',
-    a: 'You can trade major cryptocurrencies like Bitcoin, Ethereum, Solana and Dogecoin, as well as equities, forex pairs, commodities, precious metals and CFDs — over 300 instruments in total.',
+    a: 'You can trade major cryptocurrencies like Bitcoin, Ethereum, Solana and Dogecoin, as well as equities, forex pairs, commodities, precious metals and CFDs - over 300 instruments in total.',
   },
   {
     q: 'Do I need trading experience to use Fortune Gainhol?',
-    a: 'Not at all. The platform is built for beginners — AI signals, copy trading and educational resources do the heavy lifting while you learn at your own pace.',
+    a: 'Not at all. The platform is built for beginners - AI signals, copy trading and educational resources do the heavy lifting while you learn at your own pace.',
   },
   {
     q: 'How do I withdraw my funds?',
@@ -427,7 +427,7 @@ export const FAQS = [
 
 export const FOOTER = {
   blurb:
-    'Fortune Gainhol is an AI-powered multi-asset trading platform offering cryptocurrencies, equities, forex and more — with 256-bit encryption and 98% cold storage.',
+    'Fortune Gainhol is an AI-powered multi-asset trading platform offering cryptocurrencies, equities, forex and more - with 256-bit encryption and 98% cold storage.',
   navTitle: 'Company',
   legalTitle: 'Legal',
   contactTitle: 'Contact',
@@ -437,7 +437,7 @@ export const FOOTER = {
     { icon: 'globe', text: 'Now available in Australia' },
   ],
   risk: [
-    'Risk Disclosure: Trading cryptocurrencies, forex, CFDs and other leveraged instruments involves substantial risk of loss and is not suitable for every investor. The value of digital assets can be highly volatile, and you may lose more than your initial investment. Past performance and AI projections are not indicative of future results. You should carefully consider your objectives, level of experience and risk appetite before trading, and never trade with funds you cannot afford to lose. Fortune Gainhol does not provide investment advice — nothing on this website constitutes a solicitation, recommendation or offer to buy or sell any financial instrument. Consult an independent financial advisor if you have any doubts. Accuracy figures, earnings projections and testimonials are illustrative marketing material, not guarantees.',
+    'Risk Disclosure: Trading cryptocurrencies, forex, CFDs and other leveraged instruments involves substantial risk of loss and is not suitable for every investor. The value of digital assets can be highly volatile, and you may lose more than your initial investment. Past performance and AI projections are not indicative of future results. You should carefully consider your objectives, level of experience and risk appetite before trading, and never trade with funds you cannot afford to lose. Fortune Gainhol does not provide investment advice - nothing on this website constitutes a solicitation, recommendation or offer to buy or sell any financial instrument. Consult an independent financial advisor if you have any doubts. Accuracy figures, earnings projections and testimonials are illustrative marketing material, not guarantees.',
     'Trading services described on this website may not be available in all jurisdictions. It is your responsibility to ensure that your use of the platform complies with the laws and regulations applicable in your country of residence.',
   ],
   legalLinks: [

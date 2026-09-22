@@ -31,7 +31,7 @@
   <text x="80" y="330" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="74" fill="url(#goldText)">Grow your fortune,</text>
   <text x="80" y="418" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="74" fill="#faf5e9">guided by AI intelligence.</text>
 
-  <text x="80" y="498" font-family="Arial, sans-serif" font-size="27" fill="#c9d8cf">Bitcoin · Ethereum · 300+ assets — 256-bit encryption, 98% cold storage.</text>
+  <text x="80" y="498" font-family="Arial, sans-serif" font-size="27" fill="#c9d8cf">Bitcoin · Ethereum · 300+ assets - 256-bit encryption, 98% cold storage.</text>
 
   <rect x="80" y="536" width="300" height="12" rx="6" fill="#c8a24b"/>
   <rect x="400" y="536" width="140" height="12" rx="6" fill="#ddb96a"/>

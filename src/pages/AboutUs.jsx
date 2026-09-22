@@ -21,7 +21,7 @@ export default function AboutUs() {
         <div className="container">
           <h1 data-reveal>About Fortune Gainhol</h1>
           <p data-reveal>
-            We built Fortune Gainhol to make world-class investing simple, secure and accessible —
+            We built Fortune Gainhol to make world-class investing simple, secure and accessible -
             powered by an AI engine, protected by bank-grade security.
           </p>
         </div>

@@ -147,7 +147,7 @@ export function GrowthArt({ className }) {
         <text x="105" y="174" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0d2c22" fontFamily="Inter, Arial, sans-serif">Get started</text>
       </g>
 
-      <text x="40" y="398" fontFamily="Inter, Arial, sans-serif" fontSize="12" fill="#c9d8cf">Illustrative artwork — trading involves significant risk</text>
+      <text x="40" y="398" fontFamily="Inter, Arial, sans-serif" fontSize="12" fill="#c9d8cf">Illustrative artwork - trading involves significant risk</text>
     </svg>
   )
 }

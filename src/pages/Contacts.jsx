@@ -93,7 +93,7 @@ export default function Contacts() {
               <h2 data-reveal>Register and a manager will reach out to you</h2>
               <p data-reveal>
                 Fill in the form and one of our account managers will contact you shortly to
-                activate your account and answer any questions you have — no obligation, no
+                activate your account and answer any questions you have - no obligation, no
                 pressure.
               </p>
               <ul className="join__points">
@@ -101,7 +101,7 @@ export default function Contacts() {
                   <span className="point-mark">
                     <Icon name="check" size={15} strokeWidth={3} />
                   </span>
-                  Free registration — cancel anytime
+                  Free registration - cancel anytime
                 </li>
                 <li data-reveal>
                   <span className="point-mark">

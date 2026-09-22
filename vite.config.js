@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    // Ship Preact's compatibility layer instead of React — same API,
+    // Ship Preact's compatibility layer instead of React - same API,
     // much smaller runtime and faster first render (mobile perf).
     alias: [
       { find: 'react', replacement: 'preact/compat' },

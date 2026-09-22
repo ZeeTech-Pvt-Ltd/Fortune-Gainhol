@@ -1,5 +1,5 @@
 /* ============================================================
-   Fortune Gainhol — "heritage fortune" design system
+   Fortune Gainhol - "heritage fortune" design system
    Deep pine green + antique gold on warm ivory. Fraunces serif
    display, Inter body, diamond lozenges and certificate frames.
    ============================================================ */
@@ -315,7 +315,7 @@ button {
   display: none;
 }
 
-/* highlighted keyword — antique-gold gradient serif */
+/* highlighted keyword - antique-gold gradient serif */
 .hl {
   background: linear-gradient(100deg, #e6c880, var(--gold) 55%, #b08a3e);
   -webkit-background-clip: text;

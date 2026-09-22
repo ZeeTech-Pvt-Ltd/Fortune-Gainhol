@@ -4,7 +4,7 @@ import useMeta from '../hooks/useMeta'
 import { SITE_URL } from '../data/content'
 
 const POINTS = [
-  'Free registration — no hidden fees to open an account',
+  'Free registration - no hidden fees to open an account',
   'AI-driven signals with a 92% accuracy rate',
   '98% of assets held in offline cold storage',
   'Withdraw your funds whenever you want',
