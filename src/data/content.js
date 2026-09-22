@@ -23,14 +23,14 @@ export const NAV_LINKS = [
 ]
 
 export const HERO = {
-  badge: 'Now live across the United States',
+  badge: 'Now live across Australia',
   title: ['Grow your', 'fortune', 'with Gainhol intelligence'],
   // `title` is [before, highlighted, after] - the highlighted word gets gold.
   lead: 'Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets — built to help you grow your fortune with bank-grade security, human support and insight you can act on.',
   trust: ['256-bit SSL encryption', '98% cold storage', '24/7 support'],
   formTitle: 'Create your free account',
   formSubtitle:
-    'Join thousands of American investors on Fortune Gainhol — registration takes under two minutes.',
+    'Join thousands of Australian investors on Fortune Gainhol — registration takes under two minutes.',
 }
 
 export const ABOUT_PAGE = {
@@ -41,7 +41,7 @@ export const ABOUT_PAGE = {
       'Fortune Gainhol began with a simple frustration: serious wealth-building tools were locked behind complicated platforms, hidden fees and jargon. We believed everyday investors deserved better — so we built it.',
       'Today, Fortune Gainhol combines an advanced AI-driven trading engine with institutional-grade security and an interface anyone can master in minutes. From your first Bitcoin to a diversified multi-asset portfolio, everything you need to grow your fortune lives in one place.',
     ],
-    facts: ['Founded 2018', 'New York HQ', '300+ instruments', '24/7 human support'],
+    facts: ['Founded 2018', 'Sydney HQ', '300+ instruments', '24/7 human support'],
   },
   values: {
     kicker: 'What we stand for',
@@ -82,8 +82,8 @@ export const ABOUT_PAGE = {
         text: 'Client funds are held in segregated accounts, and 98% of digital assets sit in offline cold wallets — unreachable by anyone but you.',
       },
       {
-        title: 'Built for the way Americans invest',
-        text: 'Local funding methods, USD-friendly onboarding and support that understands your timezone and your questions.',
+        title: 'Built for the way Australians invest',
+        text: 'Local funding methods, AUD-friendly onboarding and support that understands your timezone and your questions.',
       },
     ],
   },
@@ -202,7 +202,7 @@ export const STEPS = {
 export const JOIN = {
   kicker: 'Start today',
   title: 'Open Your Account and Start Growing Your Fortune',
-  text: 'Opening an account takes less than two minutes. Explore the market with AI-powered insight and see for yourself why investors across America are choosing Fortune Gainhol.',
+  text: 'Opening an account takes less than two minutes. Explore the market with AI-powered insight and see for yourself why investors across Australia are choosing Fortune Gainhol.',
   points: [
     'Free registration — no hidden fees to open an account',
     'AI-driven signals with a 92% accuracy rate',
@@ -279,41 +279,41 @@ export const RATING = { score: '4.8', stars: 5, meta: 'based on 213 reviews' }
 export const TESTIMONIALS = {
   kicker: 'Testimonials',
   title: 'Real Words from Real Investors',
-  text: 'Hear from investors across the United States who made the switch to Fortune Gainhol.',
+  text: 'Hear from investors across Australia who made the switch to Fortune Gainhol.',
   items: [
     {
       name: 'James T.',
-      place: 'Austin, Texas',
+      place: 'Canberra, Australia',
       text: "I'd never traded crypto before signing up. The AI signals did the heavy lifting and my account manager walked me through my first deposit. Six months in, my portfolio is actually growing — I still can't quite believe how easy Fortune Gainhol made it.",
       stars: 5,
     },
     {
       name: 'Maya S.',
-      place: 'Chicago, Illinois',
+      place: 'Newcastle, Australia',
       text: 'The copy trading is what hooked me. I mirror two experienced investors, check in on my phone during my commute, and withdrawals land within a couple of days. Clean, fast, no drama.',
       stars: 5,
     },
     {
       name: 'Robert C.',
-      place: 'Miami, Florida',
+      place: 'Hobart, Australia',
       text: 'Security was my number one concern — 98% cold storage and 2FA on every withdrawal was what convinced me to sign up. Eight months of trading on Fortune Gainhol and not a single moment of worry.',
       stars: 5,
     },
     {
       name: 'Danielle M.',
-      place: 'Denver, Colorado',
+      place: 'Cairns, Australia',
       text: 'I started from zero with their free courses and a $250 deposit. The mobile app is genuinely pleasant to use, and the educational library got me comfortable with charts within a few weeks.',
       stars: 4,
     },
     {
       name: 'Marcus B.',
-      place: 'Seattle, Washington',
+      place: 'Geelong, Australia',
       text: 'I contacted support at 2am with a funding question and a real person replied in minutes. That is when I knew I would stay. The platform is smooth, but the human support is what sets Fortune Gainhol apart.',
       stars: 5,
     },
     {
       name: 'Elena R.',
-      place: 'Boston, Massachusetts',
+      place: 'Darwin, Australia',
       text: 'The AI accuracy claims sounded too good to be true, so I started small. My results tracked the projections closely enough that I have since moved a proper portfolio over. The calculator on the site is surprisingly realistic.',
       stars: 5,
     },
@@ -390,7 +390,7 @@ export const CAPABILITIES = {
 
 export const FINAL_CTA = {
   title: 'Start Your Journey with Fortune Gainhol',
-  text: 'Create your free account today and see why investors across the United States are choosing Fortune Gainhol.',
+  text: 'Create your free account today and see why investors across Australia are choosing Fortune Gainhol.',
   trust: '256-bit SSL encryption · Free registration · Withdraw anytime',
 }
 
@@ -434,7 +434,7 @@ export const FOOTER = {
   contact: [
     { icon: 'mail', text: SUPPORT_EMAIL },
     { icon: 'clock', text: 'Support available 24/7' },
-    { icon: 'globe', text: 'Now available in the United States' },
+    { icon: 'globe', text: 'Now available in Australia' },
   ],
   risk: [
     'Risk Disclosure: Trading cryptocurrencies, forex, CFDs and other leveraged instruments involves substantial risk of loss and is not suitable for every investor. The value of digital assets can be highly volatile, and you may lose more than your initial investment. Past performance and AI projections are not indicative of future results. You should carefully consider your objectives, level of experience and risk appetite before trading, and never trade with funds you cannot afford to lose. Fortune Gainhol does not provide investment advice — nothing on this website constitutes a solicitation, recommendation or offer to buy or sell any financial instrument. Consult an independent financial advisor if you have any doubts. Accuracy figures, earnings projections and testimonials are illustrative marketing material, not guarantees.',

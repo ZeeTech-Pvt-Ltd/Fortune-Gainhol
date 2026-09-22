@@ -10,7 +10,7 @@ const initialFields = { firstName: '', lastName: '', email: '', consent: true }
 
 // Resolve the visitor's country from their IP, trying CORS-open services
 // in order. ipapi.co Cloudflare-blocks localhost, so ipwho.is leads the
-// chain and keeps the switch working in dev too. Falls back to null → US.
+// chain and keeps the switch working in dev too. Falls back to null → AU.
 async function resolveCountry() {
   const sources = [
     () =>
@@ -75,7 +75,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
       if (cancelled || !phoneInputRef.current) return
       moduleRef.current = intlTelInput
       iti = intlTelInput(phoneInputRef.current, {
-        initialCountry: 'us', // visible default; switched to the visitor's country below
+        initialCountry: 'au', // visible default; switched to the visitor's country below
         separateDialCode: true,
         placeholderNumberPolicy: 'AGGRESSIVE', // country-specific example placeholder
         placeholderNumberType: 'MOBILE',
@@ -92,14 +92,13 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
       input.addEventListener('focus', requestUtils, { once: true })
       timers.push(window.setTimeout(requestUtils, 4000))
 
-      // Default to the United States, then switch to the visitor's
-      // country from their IP once it resolves (never clobber a number
-      // already typed). Delayed 2s so the lookup doesn't compete with
-      // critical resources.
+      // Default to Australia, then switch to the visitor's country from
+      // their IP once it resolves (never clobber a number already typed).
+      // Delayed 2s so the lookup doesn't compete with critical resources.
       timers.push(
         window.setTimeout(() => {
           resolveCountry().then((cc) => {
-            if (cancelled || !cc || cc === 'us' || phoneInputRef.current.value) return
+            if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
             itiRef.current?.setSelectedCountry(cc)
           })
         }, 2000),
@@ -270,7 +269,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
               id={`${idPrefix}-phone`}
               type="tel"
               name="phone"
-              placeholder="212 555 0100"
+              placeholder="412 345 678"
               autoComplete="tel"
               aria-label="Phone number"
               required

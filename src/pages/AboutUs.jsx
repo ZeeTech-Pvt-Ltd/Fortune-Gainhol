@@ -9,8 +9,8 @@ export default function AboutUs() {
   useMeta({
     title: 'About Fortune Gainhol - Our Story, Mission and Values',
     description:
-      'Learn about Fortune Gainhol: an AI-powered trading platform built on bank-grade security, with a team dedicated to making investing simple for Americans.',
-    keywords: 'about Fortune Gainhol, crypto trading platform, AI trading company USA, Fortune Gainhol story',
+      'Learn about Fortune Gainhol: an AI-powered trading platform built on bank-grade security, with a team dedicated to making investing simple for Australians.',
+    keywords: 'about Fortune Gainhol, crypto trading platform, AI trading company Australia, Fortune Gainhol story',
     canonical: `${SITE_URL}about-us`,
   })
 

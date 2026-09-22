@@ -12,7 +12,7 @@ export default function Product() {
     description:
       'Explore the Fortune Gainhol trading platform: manage cryptocurrencies, track your portfolio, trade 300+ markets and access AI-driven analytics - from any device.',
     keywords:
-      'Fortune Gainhol product, crypto analytics platform, portfolio management, buy cryptocurrency USA, crypto trading tools',
+      'Fortune Gainhol product, crypto analytics platform, portfolio management, buy cryptocurrency Australia, crypto trading tools',
     canonical: `${SITE_URL}product`,
   })
 

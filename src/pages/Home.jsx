@@ -39,11 +39,11 @@ function BelowTheFold({ children }) {
 
 export default function Home() {
   useMeta({
-    title: 'Fortune Gainhol - AI-Powered Trading Platform | Now in the United States',
+    title: 'Fortune Gainhol - AI-Powered Trading Platform | Now in Australia',
     description:
-      'Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets. Secure, simple and now available in the United States.',
+      'Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets. Secure, simple and now available in Australia.',
     keywords:
-      'Fortune Gainhol, AI trading platform, crypto trading United States, buy Bitcoin USA, Ethereum trading, cryptocurrency exchange USA, crypto analytics',
+      'Fortune Gainhol, AI trading platform, crypto trading Australia, buy Bitcoin Australia, Ethereum trading, cryptocurrency exchange Australia, crypto analytics',
     canonical: SITE_URL,
   })
 

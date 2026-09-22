@@ -48,7 +48,7 @@ export default function Footer() {
               </li>
               <li>
                 <Icon name="globe" size={17} />
-                <span>Now available in the United States</span>
+                <span>Now available in Australia</span>
               </li>
             </ul>
           </div>

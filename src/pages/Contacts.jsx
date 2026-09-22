@@ -25,7 +25,7 @@ const CONTACT_CARDS = [
   {
     icon: 'globe',
     title: 'Availability',
-    text: 'Fortune Gainhol is now available in the United States, with more regions coming soon.',
+    text: 'Fortune Gainhol is now available in Australia, with more regions coming soon.',
   },
 ]
 
@@ -34,7 +34,7 @@ export default function Contacts() {
     title: 'Contact Us - Get in Touch with the Fortune Gainhol Team',
     description:
       'Contact the Fortune Gainhol team - support is available 24/7 by email, with a dedicated account manager for every client.',
-    keywords: 'contact Fortune Gainhol, crypto trading support USA, Fortune Gainhol help, 24/7 trading support',
+    keywords: 'contact Fortune Gainhol, crypto trading support Australia, Fortune Gainhol help, 24/7 trading support',
     canonical: `${SITE_URL}contact-us`,
   })
 

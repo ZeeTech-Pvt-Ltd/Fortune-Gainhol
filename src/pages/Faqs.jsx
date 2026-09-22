@@ -9,7 +9,7 @@ export default function Faqs() {
     title: 'FAQs - Frequently Asked Questions About Fortune Gainhol',
     description:
       'Answers to the most common questions about Fortune Gainhol - account setup, security, assets, deposits and withdrawals.',
-    keywords: 'Fortune Gainhol FAQ, crypto trading questions, how to trade crypto USA, Fortune Gainhol account help',
+    keywords: 'Fortune Gainhol FAQ, crypto trading questions, how to trade crypto Australia, Fortune Gainhol account help',
     canonical: `${SITE_URL}faq`,
   })
 

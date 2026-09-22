@@ -8,9 +8,9 @@ const STEP = 250
 const MONTHLY_RATE = 0.082 // illustrative - matches the "8.2%" projection claim
 const MONTHS = 12
 
-const money = new Intl.NumberFormat('en-US', {
+const money = new Intl.NumberFormat('en-AU', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'AUD',
   maximumFractionDigits: 0,
 })
 
