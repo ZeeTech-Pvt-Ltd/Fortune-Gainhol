@@ -18,11 +18,6 @@ const CONTACT_CARDS = [
     text: 'Our professional support team is available 24 hours a day, 7 days a week.',
   },
   {
-    icon: 'headset',
-    title: 'Dedicated Account Manager',
-    text: 'Every Fortune Gainhol client gets a personal manager to guide their first trades.',
-  },
-  {
     icon: 'globe',
     title: 'Availability',
     text: 'Fortune Gainhol is now available in Australia, with more regions coming soon.',
