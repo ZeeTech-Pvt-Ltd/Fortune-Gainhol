@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import useMeta from '../hooks/useMeta'
+import { ServiceJsonLd } from '../components/JsonLd'
 import { SITE_URL } from '../data/content'
 
 import Hero from '../sections/Hero'
@@ -49,6 +50,7 @@ export default function Home() {
 
   return (
     <>
+      <ServiceJsonLd />
       <Hero />
       <StatsBand />
       {/* Everything below the fold mounts once the browser is idle */}
