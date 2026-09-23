@@ -20,9 +20,7 @@ export default function Hero() {
               {HERO.badge}
             </div>
 
-            <h1>
-              {HERO.title[0]} <span className="hl">{HERO.title[1]}</span> {HERO.title[2]}
-            </h1>
+            <h1>{HERO.title}</h1>
 
             <p className="hero__lead">
               {HERO.lead}

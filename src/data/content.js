@@ -24,8 +24,7 @@ export const NAV_LINKS = [
 
 export const HERO = {
   badge: 'Now live across Australia',
-  title: ['Grow Your', 'Fortune', 'With Gainhol Intelligence'],
-  // `title` is [before, highlighted, after] - the highlighted word gets gold.
+  title: 'Grow Your Fortune With Gainhol Intelligence',
   lead: 'Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets - built to help you grow your fortune with bank-grade security, human support and insight you can act on.',
   trust: ['256-bit SSL encryption', '98% cold storage', '24/7 support'],
   formTitle: 'Create Your Free Account',

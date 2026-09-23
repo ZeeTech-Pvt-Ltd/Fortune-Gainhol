@@ -315,14 +315,6 @@ button {
   display: none;
 }
 
-/* highlighted keyword - antique-gold gradient */
-.hl {
-  background: linear-gradient(100deg, #e6c880, var(--gold) 55%, #b08a3e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 /* ---------- header ---------- */
 
 .site-header {
