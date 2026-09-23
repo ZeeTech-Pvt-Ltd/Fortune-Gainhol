@@ -60,6 +60,36 @@ export function ServiceJsonLd() {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
 }
 
+// The platform described as a financial product, with rating and the
+// free-account offer.
+export function FinancialProductJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'FinancialProduct',
+    name: SITE_NAME,
+    url: SITE_URL,
+    description:
+      'AI-powered trading platform for Bitcoin, Ethereum and 300+ assets with bank-grade security.',
+    category: 'Cryptocurrency trading',
+    feesAndCommissionsSpecification: 'Free account registration - no hidden fees to open an account',
+    brand: { '@type': 'Brand', name: SITE_NAME },
+    provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: RATING.score,
+      reviewCount: RATING.meta.match(/\d+/)?.[0] || '0',
+      bestRating: '5',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'AUD',
+      description: 'Free account registration',
+    },
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+}
+
 // Product page: the platform as a finance application.
 export function SoftwareApplicationJsonLd() {
   const data = {
