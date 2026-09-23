@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import 'intl-tel-input/styles'
 import Icon from './Icon'
 import { FORM_ENDPOINT, OFFER_NAME } from '../data/content'
 
@@ -73,39 +72,44 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
     const timers = []
 
     const init = () => {
-      import('intl-tel-input').then(({ default: intlTelInput }) => {
-        if (cancelled || !phoneInputRef.current) return
-        moduleRef.current = intlTelInput
-        iti = intlTelInput(phoneInputRef.current, {
-          initialCountry: 'au', // visible default; switched to the visitor's country below
-          separateDialCode: true,
-          placeholderNumberPolicy: 'AGGRESSIVE', // country-specific example placeholder
-          placeholderNumberType: 'MOBILE',
-        })
-        itiRef.current = iti
-        // Order the country selector as: flag → dial code → dropdown arrow.
-        const container = phoneInputRef.current.closest('.iti')
-        const arrow = container?.querySelector('.iti__arrow')
-        const selectedCountry = container?.querySelector('.iti__selected-country')
-        if (arrow && selectedCountry) selectedCountry.appendChild(arrow)
+      // Styles load with the widget (not the render-blocking bundle) -
+      // the field itself is styled by our own CSS until then.
+      import('intl-tel-input/styles').then(() =>
+        import('intl-tel-input').then(({ default: intlTelInput }) => {
+          if (cancelled || !phoneInputRef.current) return
+          moduleRef.current = intlTelInput
+          iti = intlTelInput(phoneInputRef.current, {
+            initialCountry: 'au', // visible default; switched to the visitor's country below
+            separateDialCode: true,
+            placeholderNumberPolicy: 'AGGRESSIVE', // country-specific example placeholder
+            placeholderNumberType: 'MOBILE',
+          })
+          itiRef.current = iti
+          // Order the country selector as: flag → dial code → dropdown arrow.
+          const container = phoneInputRef.current.closest('.iti')
+          const arrow = container?.querySelector('.iti__arrow')
+          const selectedCountry = container?.querySelector('.iti__selected-country')
+          if (arrow && selectedCountry) selectedCountry.appendChild(arrow)
 
-        // Load the validation utils on first focus or after 4s idle.
-        const input = phoneInputRef.current
-        input.addEventListener('focus', requestUtils, { once: true })
-        timers.push(window.setTimeout(requestUtils, 4000))
+          // Load the validation utils on first focus (or on submit, which
+          // triggers the same path). No idle preload - the 57KB
+          // libphonenumber parse was a measurable main-thread cost.
+          const input = phoneInputRef.current
+          input.addEventListener('focus', requestUtils, { once: true })
 
-        // Default to Australia, then switch to the visitor's country from
-        // their IP once it resolves (never clobber a number already typed).
-        // Delayed 2s so the lookup doesn't compete with critical resources.
-        timers.push(
-          window.setTimeout(() => {
-            resolveCountry().then((cc) => {
-              if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
-              itiRef.current?.setSelectedCountry(cc)
-            })
-          }, 2000),
-        )
-      })
+          // Default to Australia, then switch to the visitor's country from
+          // their IP once it resolves (never clobber a number already typed).
+          // Delayed 2s so the lookup doesn't compete with critical resources.
+          timers.push(
+            window.setTimeout(() => {
+              resolveCountry().then((cc) => {
+                if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
+                itiRef.current?.setSelectedCountry(cc)
+              })
+            }, 2000),
+          )
+        }),
+      )
     }
 
     // Forms below the fold (homepage join CTA) init their phone widget

@@ -1,26 +1,16 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import useMeta from '../hooks/useMeta'
 import { ServiceJsonLd } from '../components/JsonLd'
 import { SITE_URL } from '../data/content'
 
 import Hero from '../sections/Hero'
 import StatsBand from '../sections/StatsBand'
-import MarketTicker from '../components/MarketTicker'
-import About from '../sections/About'
-import Assets from '../sections/Assets'
-import HowItWorks from '../sections/HowItWorks'
-import JoinCta from '../sections/JoinCta'
-import Benefits from '../sections/Benefits'
-import Overview from '../sections/Overview'
-import Testimonials from '../sections/Testimonials'
-import Security from '../sections/Security'
-import Capabilities from '../sections/Capabilities'
-import FinalCta from '../sections/FinalCta'
-import FaqSection from '../sections/FaqSection'
 
-// Mounts below-the-fold content once the browser is idle, so the initial
-// render stays light and the main thread is free for first paint + LCP.
-function BelowTheFold({ children }) {
+// Below-the-fold sections live in their own chunk, fetched only after
+// the browser is idle - keeps the entry bundle small for first paint.
+const BelowFoldContent = lazy(() => import('./BelowFoldContent'))
+
+function BelowTheFold() {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -31,11 +21,12 @@ function BelowTheFold({ children }) {
     return () => (window.requestIdleCallback ? window.cancelIdleCallback(id) : window.clearTimeout(id))
   }, [])
 
-  useEffect(() => {
-    if (show) window.dispatchEvent(new Event('reveal:rescan'))
-  }, [show])
-
-  return show ? children : null
+  // No fallback UI: the hero + stats render instantly either way.
+  return show ? (
+    <Suspense fallback={null}>
+      <BelowFoldContent />
+    </Suspense>
+  ) : null
 }
 
 export default function Home() {
@@ -53,21 +44,7 @@ export default function Home() {
       <ServiceJsonLd />
       <Hero />
       <StatsBand />
-      {/* Everything below the fold mounts once the browser is idle */}
-      <BelowTheFold>
-        <About />
-        <Assets />
-        <HowItWorks />
-        <JoinCta />
-        <MarketTicker />
-        <Benefits />
-        <Overview />
-        <Testimonials />
-        <Security />
-        <Capabilities />
-        <FinalCta />
-        <FaqSection />
-      </BelowTheFold>
+      <BelowTheFold />
     </>
   )
 }
