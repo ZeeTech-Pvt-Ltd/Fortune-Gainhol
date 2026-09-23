@@ -24,12 +24,12 @@
   <!-- brand block -->
   <g transform="translate(80 96)">
     <rect x="6.5" y="6.5" width="59" height="59" rx="8" transform="rotate(45 36 36)" fill="none" stroke="#c8a24b" stroke-width="3"/>
-    <text x="36" y="49" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="40" fill="#ddb96a">F</text>
-    <text x="104" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="54" fill="#faf5e9">Fortune Gainhol</text>
+    <text x="36" y="49" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="40" fill="#ddb96a">F</text>
+    <text x="104" y="52" font-family="Arial, sans-serif" font-weight="700" font-size="54" fill="#faf5e9">Fortune Gainhol</text>
   </g>
 
-  <text x="80" y="330" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="74" fill="url(#goldText)">Grow Your Fortune,</text>
-  <text x="80" y="418" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="74" fill="#faf5e9">Guided By AI Intelligence.</text>
+  <text x="80" y="330" font-family="Arial, sans-serif" font-weight="700" font-size="74" fill="url(#goldText)">Grow Your Fortune,</text>
+  <text x="80" y="418" font-family="Arial, sans-serif" font-weight="700" font-size="74" fill="#faf5e9">Guided By AI Intelligence.</text>
 
   <text x="80" y="498" font-family="Arial, sans-serif" font-size="27" fill="#c9d8cf">Bitcoin · Ethereum · 300+ assets - 256-bit encryption, 98% cold storage.</text>
 

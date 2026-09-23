@@ -1,7 +1,7 @@
 /* ============================================================
    Fortune Gainhol - "heritage fortune" design system
-   Deep pine green + antique gold on warm ivory. Fraunces serif
-   display, Inter body, diamond lozenges and certificate frames.
+   Deep pine green + antique gold on warm ivory. One simple
+   font family (Inter) for everything, no italics.
    ============================================================ */
 
 :root {
@@ -26,7 +26,7 @@
   --white: #ffffff;
 
   /* type */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
 
   /* metrics */
@@ -315,13 +315,12 @@ button {
   display: none;
 }
 
-/* highlighted keyword - antique-gold gradient serif */
+/* highlighted keyword - antique-gold gradient */
 .hl {
   background: linear-gradient(100deg, #e6c880, var(--gold) 55%, #b08a3e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-style: italic;
 }
 
 /* ---------- header ---------- */

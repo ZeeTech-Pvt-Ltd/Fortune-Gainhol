@@ -27,7 +27,7 @@ export function DashboardArt({ className }) {
       <text x="98" y="38" fontFamily="Inter, Arial, sans-serif" fontSize="14" fontWeight="600" fill="#24332d">Portfolio · All Assets</text>
 
       {/* KPI tiles */}
-      <g fontFamily="Fraunces, Georgia, serif">
+      <g fontFamily="Inter, Arial, sans-serif">
         <rect x="36" y="70" width="150" height="74" rx="8" fill="#faf5e9" stroke="#e6dcc2" />
         <text x="52" y="96" fontSize="12" fontWeight="600" fill="#67766e" fontFamily="Inter, Arial, sans-serif">PORTFOLIO VALUE</text>
         <text x="52" y="128" fontSize="26" fontWeight="700" fill="#0d2c22">$124,560</text>
@@ -140,7 +140,7 @@ export function GrowthArt({ className }) {
       </g>
 
       {/* labels */}
-      <g fontFamily="Fraunces, Georgia, serif">
+      <g fontFamily="Inter, Arial, sans-serif">
         <text x="40" y="96" fontSize="24" fontWeight="700" fill="#faf5e9">Grow Your Fortune</text>
         <text x="40" y="124" fontSize="15" fill="#c9d8cf" fontFamily="Inter, Arial, sans-serif">AI signals · copy trading · 300+ markets</text>
         <rect x="40" y="146" width="130" height="44" rx="22" fill="#c8a24b" />

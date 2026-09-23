@@ -40,24 +40,27 @@
          Loaded non-blocking so the stylesheet doesn't delay first paint. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- display=optional: no font swap after first paint, so no CLS.
-         The preloaded stylesheet makes the fonts available early on
-         normal connections; slow connections get the Georgia fallback. -->
+    <!-- Fonts: Inter only (one simple family for headings and body).
+         display=optional: no font swap after first paint, so no CLS.
+         The preloaded stylesheet makes the font available early on
+         normal connections; slow connections get the system fallback. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=optional"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=optional"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=optional"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional"
       />
     </noscript>
 
