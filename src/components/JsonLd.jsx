@@ -32,7 +32,9 @@ export function FaqJsonLd({ faqs }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
 }
 
-// The trading platform described as a Service, with the site's rating.
+// The trading platform described as a Service. No aggregateRating here:
+// Google only accepts rating markup under reviewable types (Product,
+// SoftwareApplication, LocalBusiness, ...) - Service is not one of them.
 export function ServiceJsonLd() {
   const data = {
     '@context': 'https://schema.org',
@@ -44,12 +46,6 @@ export function ServiceJsonLd() {
       'AI-powered trading platform for Bitcoin, Ethereum and 300+ assets with 256-bit encryption and 98% cold storage.',
     provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
     areaServed: { '@type': 'Country', name: 'Australia' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: RATING.score,
-      reviewCount: RATING.meta.match(/\d+/)?.[0] || '0',
-      bestRating: '5',
-    },
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -60,8 +56,9 @@ export function ServiceJsonLd() {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
 }
 
-// The platform described as a financial product, with rating and the
-// free-account offer.
+// The platform described as a financial product, with the free-account
+// offer. No aggregateRating here - FinancialProduct is not a
+// Google-accepted parent type for rating markup.
 export function FinancialProductJsonLd() {
   const data = {
     '@context': 'https://schema.org',
@@ -74,12 +71,6 @@ export function FinancialProductJsonLd() {
     feesAndCommissionsSpecification: 'Free account registration - no hidden fees to open an account',
     brand: { '@type': 'Brand', name: SITE_NAME },
     provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: RATING.score,
-      reviewCount: RATING.meta.match(/\d+/)?.[0] || '0',
-      bestRating: '5',
-    },
     offers: {
       '@type': 'Offer',
       price: '0',
