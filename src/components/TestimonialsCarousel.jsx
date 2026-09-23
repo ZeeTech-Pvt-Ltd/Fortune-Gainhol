@@ -98,7 +98,7 @@ export default function TestimonialsCarousel() {
             <p>{item.text}</p>
             <div className="testi-card__who">
               {item.avatar ? (
-                <img className="testi-card__avatar" src={item.avatar} alt="" aria-hidden="true" />
+                <img className="testi-card__avatar" src={item.avatar} alt={`${item.name} avatar`} />
               ) : (
                 <span className="testi-card__avatar" aria-hidden="true">
                   {initials(item.name)}
