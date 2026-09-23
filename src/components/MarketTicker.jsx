@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // Live prices with a provider fallback chain (all CORS-open, no keys):
 // CoinGecko first, then Binance public market data. Refreshed every 90s;
@@ -61,9 +61,33 @@ async function loadPrices() {
 }
 
 export default function MarketTicker() {
+  const rootRef = useRef(null)
   const [prices, setPrices] = useState(null)
+  const [nearView, setNearView] = useState(false)
+
+  // Only start fetching when the strip is close to the viewport - it sits
+  // below the fold, so eager loading wastes network and main-thread time.
+  useEffect(() => {
+    const el = rootRef.current
+    if (!el || !('IntersectionObserver' in window)) {
+      setNearView(true)
+      return
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setNearView(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '800px 0px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
+    if (!nearView) return
     let cancelled = false
     const load = () =>
       loadPrices()
@@ -79,14 +103,14 @@ export default function MarketTicker() {
       cancelled = true
       clearInterval(interval)
     }
-  }, [])
+  }, [nearView])
 
-  if (!prices) return null
+  if (!prices) return <div ref={rootRef} className="ticker" aria-hidden="true" />
 
   const groups = [0, 1] // duplicated for the seamless scroll loop
 
   return (
-    <div className="ticker" aria-label="Live cryptocurrency prices">
+    <div className="ticker" ref={rootRef} aria-label="Live cryptocurrency prices">
       <div className="ticker__track">
         {groups.map((group) => (
           <div className="ticker__group" key={group} aria-hidden={group === 1}>
@@ -96,7 +120,7 @@ export default function MarketTicker() {
               const up = price.usd_24h_change >= 0
               return (
                 <span className="ticker__item" key={coin.id}>
-                  <img src={coin.icon} alt={`${coin.symbol} logo`} loading="lazy" />
+                  <img src={coin.icon} alt={`${coin.symbol} logo`} />
                   <span className="ticker__symbol">{coin.symbol}</span>
                   <span className="ticker__price">${formatPrice(price.usd)}</span>
                   <span className={`ticker__change ${up ? 'is-up' : 'is-down'}`}>

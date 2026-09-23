@@ -17,10 +17,27 @@ function initials(name) {
  * arrows, dot indicators and autoplay that pauses on hover/focus.
  */
 export default function TestimonialsCarousel() {
+  const rootRef = useRef(null)
   const trackRef = useRef(null)
   const [pages, setPages] = useState(1)
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [inView, setInView] = useState(false)
+
+  // Autoplay only while the carousel is on screen - offscreen smooth
+  // scrolls still cost main-thread work on mobile.
+  useEffect(() => {
+    const el = rootRef.current
+    if (!el || !('IntersectionObserver' in window)) {
+      setInView(true)
+      return
+    }
+    const observer = new IntersectionObserver((entries) => {
+      setInView(entries.some((entry) => entry.isIntersecting))
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   // Recompute the number of pages whenever the track size changes.
   useEffect(() => {
@@ -51,16 +68,17 @@ export default function TestimonialsCarousel() {
     [pages],
   )
 
-  // Autoplay - paused while the pointer hovers or focus is inside.
+  // Autoplay - paused while offscreen, hovered, or focused.
   useEffect(() => {
-    if (paused) return
+    if (paused || !inView) return
     const id = setInterval(() => goTo(index + 1), AUTOPLAY_MS)
     return () => clearInterval(id)
-  }, [paused, index, goTo])
+  }, [paused, inView, index, goTo])
 
   return (
     <div
       className="testi-carousel"
+      ref={rootRef}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}

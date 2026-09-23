@@ -69,44 +69,65 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
     if (!phoneInputRef.current) return
     let cancelled = false
     let iti = null
+    let observer = null
     const timers = []
 
-    import('intl-tel-input').then(({ default: intlTelInput }) => {
-      if (cancelled || !phoneInputRef.current) return
-      moduleRef.current = intlTelInput
-      iti = intlTelInput(phoneInputRef.current, {
-        initialCountry: 'au', // visible default; switched to the visitor's country below
-        separateDialCode: true,
-        placeholderNumberPolicy: 'AGGRESSIVE', // country-specific example placeholder
-        placeholderNumberType: 'MOBILE',
+    const init = () => {
+      import('intl-tel-input').then(({ default: intlTelInput }) => {
+        if (cancelled || !phoneInputRef.current) return
+        moduleRef.current = intlTelInput
+        iti = intlTelInput(phoneInputRef.current, {
+          initialCountry: 'au', // visible default; switched to the visitor's country below
+          separateDialCode: true,
+          placeholderNumberPolicy: 'AGGRESSIVE', // country-specific example placeholder
+          placeholderNumberType: 'MOBILE',
+        })
+        itiRef.current = iti
+        // Order the country selector as: flag → dial code → dropdown arrow.
+        const container = phoneInputRef.current.closest('.iti')
+        const arrow = container?.querySelector('.iti__arrow')
+        const selectedCountry = container?.querySelector('.iti__selected-country')
+        if (arrow && selectedCountry) selectedCountry.appendChild(arrow)
+
+        // Load the validation utils on first focus or after 4s idle.
+        const input = phoneInputRef.current
+        input.addEventListener('focus', requestUtils, { once: true })
+        timers.push(window.setTimeout(requestUtils, 4000))
+
+        // Default to Australia, then switch to the visitor's country from
+        // their IP once it resolves (never clobber a number already typed).
+        // Delayed 2s so the lookup doesn't compete with critical resources.
+        timers.push(
+          window.setTimeout(() => {
+            resolveCountry().then((cc) => {
+              if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
+              itiRef.current?.setSelectedCountry(cc)
+            })
+          }, 2000),
+        )
       })
-      itiRef.current = iti
-      // Order the country selector as: flag → dial code → dropdown arrow.
-      const container = phoneInputRef.current.closest('.iti')
-      const arrow = container?.querySelector('.iti__arrow')
-      const selectedCountry = container?.querySelector('.iti__selected-country')
-      if (arrow && selectedCountry) selectedCountry.appendChild(arrow)
+    }
 
-      // Load the validation utils on first focus or after 4s idle.
-      const input = phoneInputRef.current
-      input.addEventListener('focus', requestUtils, { once: true })
-      timers.push(window.setTimeout(requestUtils, 4000))
-
-      // Default to Australia, then switch to the visitor's country from
-      // their IP once it resolves (never clobber a number already typed).
-      // Delayed 2s so the lookup doesn't compete with critical resources.
-      timers.push(
-        window.setTimeout(() => {
-          resolveCountry().then((cc) => {
-            if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
-            itiRef.current?.setSelectedCountry(cc)
-          })
-        }, 2000),
+    // Forms below the fold (homepage join CTA) init their phone widget
+    // only when scrolled near - saves a chunk of scripting on load.
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            observer.disconnect()
+            init()
+          }
+        },
+        { rootMargin: '600px 0px' },
       )
-    })
+      observer.observe(phoneInputRef.current)
+    } else {
+      init()
+    }
 
     return () => {
       cancelled = true
+      observer?.disconnect()
       phoneInputRef.current?.removeEventListener('focus', requestUtils)
       timers.forEach((t) => window.clearTimeout(t))
       iti?.destroy()
@@ -194,7 +215,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
 
   if (status === STATUS.success) {
     return (
-      <div className="form-card" data-reveal>
+      <div className="form-card">
         <div className="form-success" role="status">
           Thank you! Your registration has been received. Our team will contact you shortly.
         </div>
@@ -203,7 +224,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
   }
 
   return (
-    <div className="form-card" data-reveal>
+    <div className="form-card">
       {title && <h2>{title}</h2>}
       {subtitle && <p>{subtitle}</p>}
       <form onSubmit={handleSubmit}>

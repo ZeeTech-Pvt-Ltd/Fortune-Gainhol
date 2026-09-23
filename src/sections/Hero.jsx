@@ -10,7 +10,9 @@ export default function Hero() {
       <div className="container">
         <div className="hero-grid">
           <div>
-            <div className="hero-badge" data-reveal>
+            {/* Above-the-fold elements render instantly (no reveal fade):
+                the animation would delay FCP/LCP on mobile. */}
+            <div className="hero-badge">
               <span className="hero-badge__dot">
                 <Icon name="sparkle" size={13} filled />
                 New
@@ -18,15 +20,15 @@ export default function Hero() {
               {HERO.badge}
             </div>
 
-            <h1 data-reveal>
+            <h1>
               {HERO.title[0]} <span className="hl">{HERO.title[1]}</span> {HERO.title[2]}
             </h1>
 
-            <p className="hero__lead" data-reveal>
+            <p className="hero__lead">
               {HERO.lead}
             </p>
 
-            <div className="hero__trust" data-reveal>
+            <div className="hero__trust">
               {HERO.trust.map((item, i) => (
                 <span key={item}>
                   <Icon name={TRUST_ICONS[i]} size={16} />

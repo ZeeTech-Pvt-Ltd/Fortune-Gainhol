@@ -241,11 +241,11 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
-/* Dark pine sections carry a faint diamond lattice + corner glow */
+/* Dark pine sections carry a soft corner glow. (The old diamond-lattice
+   repeating gradients cost ~seconds of style/layout on mobile - removed
+   for performance; the framed-card motif carries the identity instead.) */
 .section--dark {
   background:
-    repeating-linear-gradient(45deg, rgba(221, 185, 106, 0.035) 0 1px, transparent 1px 26px),
-    repeating-linear-gradient(-45deg, rgba(221, 185, 106, 0.035) 0 1px, transparent 1px 26px),
     radial-gradient(900px 460px at 88% -6%, rgba(200, 162, 75, 0.12), transparent 62%),
     var(--pine-deep);
   color: var(--cream);
@@ -330,9 +330,9 @@ button {
   position: sticky;
   top: 0;
   z-index: 60;
-  background: rgba(7, 29, 22, 0.93);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  /* near-opaque, no backdrop blur - backdrop-filter repaints on every
+     scroll frame and costs heavily on mobile */
+  background: rgba(7, 29, 22, 0.97);
   border-bottom: 1px solid var(--pine-line);
 }
 
@@ -479,8 +479,6 @@ button {
   position: relative;
   padding: 92px 0 158px;
   background:
-    repeating-linear-gradient(45deg, rgba(221, 185, 106, 0.04) 0 1px, transparent 1px 30px),
-    repeating-linear-gradient(-45deg, rgba(221, 185, 106, 0.04) 0 1px, transparent 1px 30px),
     radial-gradient(1100px 560px at 82% -10%, rgba(200, 162, 75, 0.17), transparent 62%),
     var(--pine-deep);
   color: var(--cream);
@@ -1483,8 +1481,6 @@ img.testi-card__avatar {
   padding: 96px 0;
   text-align: center;
   background:
-    repeating-linear-gradient(45deg, rgba(221, 185, 106, 0.04) 0 1px, transparent 1px 30px),
-    repeating-linear-gradient(-45deg, rgba(221, 185, 106, 0.04) 0 1px, transparent 1px 30px),
     radial-gradient(900px 480px at 50% -20%, rgba(200, 162, 75, 0.2), transparent 65%),
     var(--pine-deep);
   color: var(--cream);
@@ -1586,10 +1582,7 @@ img.testi-card__avatar {
 /* ---------- footer ---------- */
 
 .site-footer {
-  background:
-    repeating-linear-gradient(45deg, rgba(221, 185, 106, 0.03) 0 1px, transparent 1px 30px),
-    repeating-linear-gradient(-45deg, rgba(221, 185, 106, 0.03) 0 1px, transparent 1px 30px),
-    var(--pine-deep);
+  background: var(--pine-deep);
   color: rgba(250, 245, 233, 0.75);
   border-top: 1px solid var(--pine-line);
   padding-top: 72px;
@@ -1893,8 +1886,6 @@ img.testi-card__avatar {
 .page-hero {
   padding: 88px 0 74px;
   background:
-    repeating-linear-gradient(45deg, rgba(221, 185, 106, 0.04) 0 1px, transparent 1px 30px),
-    repeating-linear-gradient(-45deg, rgba(221, 185, 106, 0.04) 0 1px, transparent 1px 30px),
     radial-gradient(1000px 480px at 80% -20%, rgba(200, 162, 75, 0.16), transparent 62%),
     var(--pine-deep);
   color: var(--cream);
@@ -2133,13 +2124,11 @@ img.testi-card__avatar {
 
 /* ---------- reveal on scroll ---------- */
 
+/* Reveal-on-scroll was removed for mobile performance: fading ~60
+   elements in during scroll cost several seconds of style/layout on
+   throttled CPUs (the main Lighthouse complaint). Content renders
+   instantly; the attributes and hook stay for future use. */
 [data-reveal] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-[data-reveal].is-visible {
   opacity: 1;
   transform: none;
 }
