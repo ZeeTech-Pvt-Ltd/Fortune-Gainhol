@@ -1,0 +1,18 @@
+# Fortune Gainhol
+
+> Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets - secure, simple and available in Australia. Built for investors of every level, with bank-grade security and 24/7 human support.
+
+## Key pages
+
+- [Home](https://fortunegain-hol.com/): Platform overview, live market prices and free account registration
+- [Product](https://fortunegain-hol.com/product): Trading tools, portfolio analytics and platform security features
+- [About Us](https://fortunegain-hol.com/about-us): Our story, values and what sets Fortune Gainhol apart
+- [Contact Us](https://fortunegain-hol.com/contact-us): Support contacts and account registration
+- [FAQs](https://fortunegain-hol.com/faq): Frequently asked questions about the platform
+- [Sign Up](https://fortunegain-hol.com/sign-up): Create your free Fortune Gainhol account
+
+## Legal
+
+- [Privacy Policy](https://fortunegain-hol.com/privacy): How Fortune Gainhol collects and protects your data
+- [Terms of Use](https://fortunegain-hol.com/terms): The terms governing use of the platform
+- [Risk Disclosure](https://fortunegain-hol.com/risk-disclosure): Important trading risk information
