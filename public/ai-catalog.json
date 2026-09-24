@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ard.ai/schema.json",
+  "owner": "ZeeTech-Pvt-Ltd",
+  "resources": [
+    {
+      "id": "fortune-gainhol-website",
+      "type": "web",
+      "title": "Fortune Gainhol - AI-Powered Trading Platform",
+      "description": "Fortune Gainhol is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets, available in Australia, with bank-grade security and 24/7 human support.",
+      "url": "https://fortunegain-hol.com/"
+    }
+  ]
+}
