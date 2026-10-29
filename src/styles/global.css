@@ -25,9 +25,9 @@
   --down: #c96a5e;
   --white: #ffffff;
 
-  /* type */
-  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  /* type (--font-inter is injected on <html> by next/font) */
+  --font-display: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
 
   /* metrics */
   --container: 1200px;

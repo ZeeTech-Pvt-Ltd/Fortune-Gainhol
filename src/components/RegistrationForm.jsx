@@ -1,7 +1,11 @@
+'use client'
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/navigation'
 import Icon from './Icon'
 import { FORM_ENDPOINT, OFFER_NAME } from '../data/content'
+// Widget CSS ships with the component chunk (bundler rewrites the flag
+// sprite urls into /_next/static/media) rather than the global sheet.
+import 'intl-tel-input/styles'
 
 const STATUS = { idle: 'idle', loading: 'loading', success: 'success', error: 'error' }
 
@@ -42,7 +46,7 @@ async function resolveCountry() {
  *   phone in full international format
  */
 export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) {
-  const navigate = useNavigate()
+  const router = useRouter()
   const [fields, setFields] = useState(initialFields)
   const [status, setStatus] = useState(STATUS.idle)
   const [phoneError, setPhoneError] = useState('')
@@ -65,51 +69,48 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
   }
 
   useEffect(() => {
-    if (!phoneInputRef.current) return
+    const phoneInput = phoneInputRef.current
+    if (!phoneInput) return
     let cancelled = false
     let iti = null
     let observer = null
     const timers = []
 
     const init = () => {
-      // Styles load with the widget (not the render-blocking bundle) -
-      // the field itself is styled by our own CSS until then.
-      import('intl-tel-input/styles').then(() =>
-        import('intl-tel-input').then(({ default: intlTelInput }) => {
-          if (cancelled || !phoneInputRef.current) return
-          moduleRef.current = intlTelInput
-          iti = intlTelInput(phoneInputRef.current, {
-            initialCountry: 'au', // visible default; switched to the visitor's country below
-            separateDialCode: true,
-            placeholderNumberPolicy: 'AGGRESSIVE', // country-specific example placeholder
-            placeholderNumberType: 'MOBILE',
-          })
-          itiRef.current = iti
-          // Order the country selector as: flag → dial code → dropdown arrow.
-          const container = phoneInputRef.current.closest('.iti')
-          const arrow = container?.querySelector('.iti__arrow')
-          const selectedCountry = container?.querySelector('.iti__selected-country')
-          if (arrow && selectedCountry) selectedCountry.appendChild(arrow)
+      import('intl-tel-input').then(({ default: intlTelInput }) => {
+        if (cancelled || !phoneInputRef.current) return
+        moduleRef.current = intlTelInput
+        iti = intlTelInput(phoneInputRef.current, {
+          initialCountry: 'au', // visible default; switched to the visitor's country below
+          separateDialCode: true,
+          placeholderNumberPolicy: 'AGGRESSIVE', // country-specific example placeholder
+          placeholderNumberType: 'MOBILE',
+        })
+        itiRef.current = iti
+        // Order the country selector as: flag → dial code → dropdown arrow.
+        const container = phoneInputRef.current.closest('.iti')
+        const arrow = container?.querySelector('.iti__arrow')
+        const selectedCountry = container?.querySelector('.iti__selected-country')
+        if (arrow && selectedCountry) selectedCountry.appendChild(arrow)
 
-          // Load the validation utils on first focus (or on submit, which
-          // triggers the same path). No idle preload - the 57KB
-          // libphonenumber parse was a measurable main-thread cost.
-          const input = phoneInputRef.current
-          input.addEventListener('focus', requestUtils, { once: true })
+        // Load the validation utils on first focus (or on submit, which
+        // triggers the same path). No idle preload - the 57KB
+        // libphonenumber parse was a measurable main-thread cost.
+        const input = phoneInputRef.current
+        input.addEventListener('focus', requestUtils, { once: true })
 
-          // Default to Australia, then switch to the visitor's country from
-          // their IP once it resolves (never clobber a number already typed).
-          // Delayed 2s so the lookup doesn't compete with critical resources.
-          timers.push(
-            window.setTimeout(() => {
-              resolveCountry().then((cc) => {
-                if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
-                itiRef.current?.setSelectedCountry(cc)
-              })
-            }, 2000),
-          )
-        }),
-      )
+        // Default to Australia, then switch to the visitor's country from
+        // their IP once it resolves (never clobber a number already typed).
+        // Delayed 2s so the lookup doesn't compete with critical resources.
+        timers.push(
+          window.setTimeout(() => {
+            resolveCountry().then((cc) => {
+              if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
+              itiRef.current?.setSelectedCountry(cc)
+            })
+          }, 2000),
+        )
+      })
     }
 
     // Forms below the fold (homepage join CTA) init their phone widget
@@ -132,12 +133,11 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
     return () => {
       cancelled = true
       observer?.disconnect()
-      phoneInputRef.current?.removeEventListener('focus', requestUtils)
+      phoneInput?.removeEventListener('focus', requestUtils)
       timers.forEach((t) => window.clearTimeout(t))
       iti?.destroy()
       itiRef.current = null
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const setField = (name) => (e) =>
@@ -210,7 +210,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
       setStatus(STATUS.success)
       setFields(initialFields)
       iti?.setNumber('')
-      navigate('/thank-you')
+      router.push('/thank-you')
     } catch {
       // Endpoint rate-limits to 3 attempts / 5 min per IP.
       setStatus(STATUS.error)

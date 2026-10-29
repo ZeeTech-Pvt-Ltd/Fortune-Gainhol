@@ -1,15 +1,16 @@
-import LegalPage from '../components/LegalPage'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '../data/content'
+import LegalPage from '@/components/LegalPage'
+import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '@/data/content'
+import { pageMeta } from '@/app/seo'
 
 // Template text - review with legal counsel before launch.
 
+export const metadata = pageMeta({
+  title: 'Terms of Use - Your Agreement with Fortune Gainhol',
+  description: 'The terms that govern your use of the Fortune Gainhol website and trading platform.',
+  canonical: `${SITE_URL}terms`,
+})
+
 export default function TermsOfUse() {
-  useMeta({
-    title: 'Terms of Use - Your Agreement with Fortune Gainhol',
-    description: 'The terms that govern your use of the Fortune Gainhol website and trading platform.',
-    canonical: `${SITE_URL}terms`,
-  })
 
   return (
     <LegalPage title="Terms of Use" updated="September 22, 2026">

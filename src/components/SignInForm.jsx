@@ -1,16 +1,11 @@
+'use client'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL, SUPPORT_EMAIL } from '../data/content'
+import Link from 'next/link'
+import { SUPPORT_EMAIL } from '../data/content'
 
-export default function SignIn() {
-  useMeta({
-    title: 'Sign In - Fortune Gainhol Client Area',
-    description: 'Sign in to your Fortune Gainhol account to access your trading dashboard.',
-    robots: 'noindex, nofollow',
-    canonical: `${SITE_URL}sign-in`,
-  })
-
+// Client half of the sign-in page (local submit state); metadata lives
+// in src/app/sign-in/page.jsx.
+export default function SignInForm() {
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e) => {
@@ -56,7 +51,7 @@ export default function SignIn() {
           </form>
 
           <p className="auth-card__footer">
-            New to Fortune Gainhol? <Link to="/sign-up">Create an account</Link>
+            New to Fortune Gainhol? <Link href="/sign-up">Create an account</Link>
           </p>
         </div>
       </div>

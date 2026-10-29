@@ -1,18 +1,19 @@
-import useMeta from '../hooks/useMeta'
-import Icon from '../components/Icon'
-import FinalCta from '../sections/FinalCta'
-import { BreadcrumbJsonLd } from '../components/JsonLd'
-import { DashboardArt } from '../components/Art'
-import { SITE_URL, ABOUT_PAGE } from '../data/content'
+import Icon from '@/components/Icon'
+import FinalCta from '@/sections/FinalCta'
+import { BreadcrumbJsonLd } from '@/components/JsonLd'
+import { DashboardArt } from '@/components/Art'
+import { SITE_URL, ABOUT_PAGE } from '@/data/content'
+import { pageMeta } from '@/app/seo'
+
+export const metadata = pageMeta({
+  title: 'About Fortune Gainhol - Our Story, Mission and Values',
+  description:
+    'Learn about Fortune Gainhol: an AI-powered trading platform built on bank-grade security, with a team dedicated to making investing simple for Australians.',
+  keywords: 'about Fortune Gainhol, crypto trading platform, AI trading company Australia, Fortune Gainhol story',
+  canonical: `${SITE_URL}about-us`,
+})
 
 export default function AboutUs() {
-  useMeta({
-    title: 'About Fortune Gainhol - Our Story, Mission and Values',
-    description:
-      'Learn about Fortune Gainhol: an AI-powered trading platform built on bank-grade security, with a team dedicated to making investing simple for Australians.',
-    keywords: 'about Fortune Gainhol, crypto trading platform, AI trading company Australia, Fortune Gainhol story',
-    canonical: `${SITE_URL}about-us`,
-  })
 
   return (
     <>

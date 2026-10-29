@@ -1,15 +1,16 @@
-import { Link } from 'react-router-dom'
-import Icon from '../components/Icon'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL } from '../data/content'
+import Link from 'next/link'
+import Icon from '@/components/Icon'
+import { SITE_URL } from '@/data/content'
+import { pageMeta } from '@/app/seo'
+
+export const metadata = pageMeta({
+  title: 'Thank You - Your Fortune Gainhol Registration Is Received',
+  description: 'Your Fortune Gainhol registration has been received. Our team will contact you shortly.',
+  robots: 'noindex, nofollow',
+  canonical: `${SITE_URL}thank-you`,
+})
 
 export default function ThankYou() {
-  useMeta({
-    title: 'Thank You - Your Fortune Gainhol Registration Is Received',
-    description: 'Your Fortune Gainhol registration has been received. Our team will contact you shortly.',
-    robots: 'noindex, nofollow',
-    canonical: `${SITE_URL}thank-you`,
-  })
 
   return (
     <section className="centered-page">
@@ -23,10 +24,10 @@ export default function ThankYou() {
           Fortune Gainhol account and guide you through your first trade.
         </p>
         <div data-reveal style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link className="btn btn--gold" to="/">
+          <Link className="btn btn--gold" href="/">
             Back to home
           </Link>
-          <Link className="btn btn--ghost" to="/faq">
+          <Link className="btn btn--ghost" href="/faq">
             Read the FAQ
           </Link>
         </div>

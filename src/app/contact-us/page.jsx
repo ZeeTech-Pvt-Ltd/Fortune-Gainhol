@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
-import Icon from '../components/Icon'
-import RegistrationForm from '../components/RegistrationForm'
-import useMeta from '../hooks/useMeta'
-import { BreadcrumbJsonLd } from '../components/JsonLd'
-import { SITE_URL, SUPPORT_EMAIL, HERO } from '../data/content'
+import Link from 'next/link'
+import Icon from '@/components/Icon'
+import RegistrationForm from '@/components/RegistrationForm'
+import { BreadcrumbJsonLd } from '@/components/JsonLd'
+import { SITE_URL, SUPPORT_EMAIL, HERO } from '@/data/content'
+import { pageMeta } from '@/app/seo'
 
 const CONTACT_CARDS = [
   {
@@ -24,14 +24,15 @@ const CONTACT_CARDS = [
   },
 ]
 
+export const metadata = pageMeta({
+  title: 'Contact Us - Get in Touch with the Fortune Gainhol Team',
+  description:
+    'Contact the Fortune Gainhol team - support is available 24/7 by email, with a dedicated account manager for every client.',
+  keywords: 'contact Fortune Gainhol, crypto trading support Australia, Fortune Gainhol help, 24/7 trading support',
+  canonical: `${SITE_URL}contact-us`,
+})
+
 export default function Contacts() {
-  useMeta({
-    title: 'Contact Us - Get in Touch with the Fortune Gainhol Team',
-    description:
-      'Contact the Fortune Gainhol team - support is available 24/7 by email, with a dedicated account manager for every client.',
-    keywords: 'contact Fortune Gainhol, crypto trading support Australia, Fortune Gainhol help, 24/7 trading support',
-    canonical: `${SITE_URL}contact-us`,
-  })
 
   return (
     <>
@@ -70,10 +71,10 @@ export default function Contacts() {
 
           <p data-reveal style={{ textAlign: 'center', marginTop: 40, color: 'var(--muted)' }}>
             Ready to start?{' '}
-            <Link to="/sign-up" style={{ fontWeight: 600 }}>
+            <Link href="/sign-up" style={{ fontWeight: 600 }}>
               Create your free account
             </Link>{' '}
-            or check the <Link to="/faq" style={{ fontWeight: 600 }}>FAQ</Link>.
+            or check the <Link href="/faq" style={{ fontWeight: 600 }}>FAQ</Link>.
           </p>
         </div>
       </section>

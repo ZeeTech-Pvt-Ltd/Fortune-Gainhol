@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import Icon from './Icon'
 
 // Lightweight stub for routes that are scheduled for a later iteration.
@@ -15,10 +15,10 @@ export default function ComingSoon({ title, description }) {
           soon.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link className="btn btn--gold" to="/">
+          <Link className="btn btn--gold" href="/">
             Back to home
           </Link>
-          <Link className="btn btn--ghost" to="/sign-up">
+          <Link className="btn btn--ghost" href="/sign-up">
             Create an account
           </Link>
         </div>

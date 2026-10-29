@@ -1,20 +1,21 @@
-import { Link } from 'react-router-dom'
-import useMeta from '../hooks/useMeta'
-import Icon from '../components/Icon'
-import FinalCta from '../sections/FinalCta'
-import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from '../components/JsonLd'
-import { GrowthArt } from '../components/Art'
-import { SITE_URL, PRODUCT_PAGE } from '../data/content'
+import Link from 'next/link'
+import Icon from '@/components/Icon'
+import FinalCta from '@/sections/FinalCta'
+import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from '@/components/JsonLd'
+import { GrowthArt } from '@/components/Art'
+import { SITE_URL, PRODUCT_PAGE } from '@/data/content'
+import { pageMeta } from '@/app/seo'
+
+export const metadata = pageMeta({
+  title: 'Fortune Gainhol Trading Platform - Tools, Analytics and Security',
+  description:
+    'Explore the Fortune Gainhol trading platform: manage cryptocurrencies, track your portfolio, trade 300+ markets and access AI-driven analytics - from any device.',
+  keywords:
+    'Fortune Gainhol product, crypto analytics platform, portfolio management, buy cryptocurrency Australia, crypto trading tools',
+  canonical: `${SITE_URL}product`,
+})
 
 export default function Product() {
-  useMeta({
-    title: 'Fortune Gainhol Trading Platform - Tools, Analytics and Security',
-    description:
-      'Explore the Fortune Gainhol trading platform: manage cryptocurrencies, track your portfolio, trade 300+ markets and access AI-driven analytics - from any device.',
-    keywords:
-      'Fortune Gainhol product, crypto analytics platform, portfolio management, buy cryptocurrency Australia, crypto trading tools',
-    canonical: `${SITE_URL}product`,
-  })
 
   return (
     <>
@@ -76,7 +77,7 @@ export default function Product() {
                 ))}
               </ul>
               <div data-reveal>
-                <Link className="btn btn--gold" to="/sign-up">
+                <Link className="btn btn--gold" href="/sign-up">
                   Open your free account
                   <Icon name="arrow-right" size={18} />
                 </Link>

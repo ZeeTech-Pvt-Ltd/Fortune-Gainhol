@@ -1,7 +1,7 @@
-import Icon from '../components/Icon'
-import RegistrationForm from '../components/RegistrationForm'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL } from '../data/content'
+import Icon from '@/components/Icon'
+import RegistrationForm from '@/components/RegistrationForm'
+import { SITE_URL } from '@/data/content'
+import { pageMeta } from '@/app/seo'
 
 const POINTS = [
   'Free registration - no hidden fees to open an account',
@@ -10,14 +10,15 @@ const POINTS = [
   'Withdraw your funds whenever you want',
 ]
 
+export const metadata = pageMeta({
+  title: 'Sign Up - Create Your Free Fortune Gainhol Account',
+  description:
+    'Create your free Fortune Gainhol account in under two minutes and start trading Bitcoin, Ethereum and 300+ assets with AI-powered insights.',
+  keywords: 'Fortune Gainhol sign up, open trading account Australia, crypto account registration, Fortune Gainhol registration',
+  canonical: `${SITE_URL}sign-up`,
+})
+
 export default function SignUp() {
-  useMeta({
-    title: 'Sign Up - Create Your Free Fortune Gainhol Account',
-    description:
-      'Create your free Fortune Gainhol account in under two minutes and start trading Bitcoin, Ethereum and 300+ assets with AI-powered insights.',
-    keywords: 'Fortune Gainhol sign up, open trading account Australia, crypto account registration, Fortune Gainhol registration',
-    canonical: `${SITE_URL}sign-up`,
-  })
 
   return (
     <section className="auth-wrap">
